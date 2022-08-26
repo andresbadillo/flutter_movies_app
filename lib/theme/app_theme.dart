@@ -14,6 +14,9 @@ class AppTheme {
       centerTitle: true,
     ),
 
+    // TextStyle Theme
+    //textTheme: const TextTheme()
+
     // TextButton Theme
     // textButtonTheme: TextButtonThemeData(
     //   style: TextButton.styleFrom(primary: primary),
