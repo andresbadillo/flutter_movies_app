@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final moviesProvider = Provider.of<MoviesProvider>(context);
-    print(moviesProvider.onDisplayMovies);
+    //print(moviesProvider.onDisplayMovies);
 
     return Scaffold(
         appBar: AppBar(
@@ -29,7 +29,11 @@ class HomeScreen extends StatelessWidget {
                 movies: moviesProvider.onDisplayMovies,
               ),
               // Slider de películas:
-              MovieSlider(),
+              MovieSlider(
+                movies: moviesProvider.popularMovies,
+                titleMovieSlider: 'Populares',
+                onNextPage: () => moviesProvider.getPopularMovies(),
+              ),
             ],
           ),
         ));
