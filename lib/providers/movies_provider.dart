@@ -10,6 +10,8 @@ class MoviesProvider extends ChangeNotifier {
   List<Movie> onDisplayMovies = [];
   List<Movie> popularMovies = [];
 
+  Map<int, List<Cast>> movieCast = {};
+
   int _popularPage = 0;
 
   MoviesProvider() {
@@ -31,7 +33,7 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   getOnDisplayMovies() async {
-    final jdonData = await _getJsonData('3/movie/now_playing');
+    final jsonData = await _getJsonData('3/movie/now_playing');
 
     // var url = Uri.https(_baseUrl, '3/movie/now_playing', {
     //   'api_key': _apiKey,
@@ -42,7 +44,7 @@ class MoviesProvider extends ChangeNotifier {
     // // Await the http get response, then decode the json-formatted response.
     // final response = await http.get(url);
     // final nowPlayingResponse = NowPlayingResponse.fromJson(response.body);
-    final nowPlayingResponse = NowPlayingResponse.fromJson(jdonData);
+    final nowPlayingResponse = NowPlayingResponse.fromJson(jsonData);
 
     onDisplayMovies = nowPlayingResponse.results;
 
@@ -52,7 +54,7 @@ class MoviesProvider extends ChangeNotifier {
 
   getPopularMovies() async {
     _popularPage++;
-    final jdonData = await _getJsonData('3/movie/popular', _popularPage);
+    final jsonData = await _getJsonData('3/movie/popular', _popularPage);
 
     // var url = Uri.https(_baseUrl, '3/movie/popular', {
     //   'api_key': _apiKey,
@@ -63,10 +65,21 @@ class MoviesProvider extends ChangeNotifier {
     // // Await the http get response, then decode the json-formatted response.
     // final response = await http.get(url);
     // final popularResponse = PopularResponse.fromJson(response.body);
-    final popularResponse = PopularResponse.fromJson(jdonData);
+    final popularResponse = PopularResponse.fromJson(jsonData);
 
     popularMovies = [...popularMovies, ...popularResponse.results];
 
     notifyListeners();
+  }
+
+  Future<List<Cast>> getMovieCast(int movieId) async {
+    if (movieCast.containsKey(movieId)) return movieCast[movieId]!;
+
+    final jsonData = await _getJsonData('3/movie/$movieId/credits');
+    final creditsResponse = CreditsResponse.fromJson(jsonData);
+
+    movieCast[movieId] = creditsResponse.cast;
+
+    return creditsResponse.cast;
   }
 }
