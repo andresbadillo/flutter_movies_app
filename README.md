@@ -1,16 +1,37 @@
-# flutter_movies_app
+# Flutter - Movies App
 
-A new Flutter project.
+Hello, I'm Andres Badillo, and this in my new Flutter project 😉:
 
-## Getting Started
+## Table of Contents
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
 
-This project is a starting point for a Flutter application.
+## General Info
+In this app we review the current movies on demand
 
-A few resources to get you started if this is your first Flutter project:
+### Screenshot - Movies Screen
+![Home Screen](https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_1.png)
+### Screenshot - Details Screen
+![Details Screen](https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_2.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies
+A list of technologies used within the project:
+* [Flutter](https://flutter.dev/): Version 3.0.5 
+* [Dart](https://dart.dev/): Version 2.17
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+About the installation:
+```
+$ git clone https://github.com/andresbadillo/flutter_movies_app.git
+```
+Open in: **VSCode or Android Studio**
+
+## Collaboration
+
+> Fork this reposotory
+
+> Send your Push Request
+
+> Contact me: [andresbadillo.co](https://www.andresbadillo.co/)
