@@ -63,8 +63,11 @@ class _MovieSliderState extends State<MovieSlider> {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: widget.movies.length,
-              itemBuilder: (context, int index) =>
-                  _MoviePoster(movie: widget.movies[index]),
+              itemBuilder: (context, int index) => _MoviePoster(
+                movie: widget.movies[index],
+                heoId:
+                    '${widget.titleMovieSlider}-${index}-${widget.movies[index].id}',
+              ),
             ),
           )
         ],
@@ -75,14 +78,18 @@ class _MovieSliderState extends State<MovieSlider> {
 
 class _MoviePoster extends StatelessWidget {
   final Movie movie;
+  final String heoId;
 
   const _MoviePoster({
     Key? key,
     required this.movie,
+    required this.heoId,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    movie.heroId = heoId;
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: 130,
@@ -92,14 +99,17 @@ class _MoviePoster extends StatelessWidget {
           GestureDetector(
             onTap: () =>
                 Navigator.pushNamed(context, 'details', arguments: movie),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: FadeInImage(
-                placeholder: const AssetImage('assets/no-image.jpg'),
-                image: NetworkImage(movie.fullPosterImg),
-                width: 130,
-                height: 190,
-                fit: BoxFit.cover,
+            child: Hero(
+              tag: movie.heroId!,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: FadeInImage(
+                  placeholder: const AssetImage('assets/no-image.jpg'),
+                  image: NetworkImage(movie.fullPosterImg),
+                  width: 130,
+                  height: 190,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
