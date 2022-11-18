@@ -11,10 +11,10 @@ Hello, I'm Andres Badillo, and this in my new Flutter project 😉:
 ## General Info
 In this app we review the current movies on demand
 
-### Screenshot - Movies Screen
-![Home Screen](https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_1.png)
-### Screenshot - Details Screen
-![Details Screen](https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_2.png)
+<h3 align="left">Screenshot - Movies Screen:</h3>
+<p align="center">
+<a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_1.png" width="40%"/> </a><a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_2.png" width="40%"/></a>
+</p>
 
 ## Technologies
 A list of technologies used within the project:
