@@ -13,7 +13,7 @@ In this app we review the current movies on demand
 
 <h3 align="left">Screenshot - Movies Screen:</h3>
 <p align="center">
-<a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_1.png" width="40%"/> </a><a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_2.png" width="40%"/></a>
+<a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_1.png" width="45%"/> </a><a rel="noreferrer"><img src="https://github.com/andresbadillo/flutter_movies_app/blob/master/assets/Screenshot_2.png" width="45%"/></a>
 </p>
 
 ## Technologies
